@@ -1,16 +1,11 @@
-# playwrite-firefoxでggrksする
-
-* TypeScriptで書く
-* 定形コードの検証
-
-だけの目的。
-
-```ts
 import { Page, Browser, firefox } from "playwright-core";
 
 const launchChrome = firefox.launch({
     // ブラウザ画面を表示しながら（ヘッドレスモードを無効にする）。
     headless: false,
+
+    // 人間味のある速度で入力/操作する。
+    slowMo: 50,
 });
 
 launchChrome.then(async (browser: Browser) => {
@@ -23,7 +18,7 @@ launchChrome.then(async (browser: Browser) => {
 
 
     // 自動操作するコードをここに書く
+    await page.goto("https://google.com/");
+    await page.type("input[name='q']", "puppeteer");
+    await page.keyboard.press("Enter");
 });
-```
-
-see: https://qiita.com/YusukeIwaki/items/127dba7bb7197ea8d91b

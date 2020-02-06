@@ -1,0 +1,11 @@
+{
+  "name": "ggrks-playwright-ts",
+  "repository": "git@github.com:YusukeIwaki/ggrks-playwright-ts.git",
+  "author": "YusukeIwaki",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^13.7.0",
+    "playwright-firefox": "^0.10.0",
+    "typescript": "^3.7.5"
+  }
+}
